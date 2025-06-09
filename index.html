@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek's Dark Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #1f1f1f;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #00ffcc;
+      color: #121212;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Vivek's Gaming Site 🎮</h1>
+  <button class="btn" onclick="alert('Number Generated: ' + Math.floor(Math.random()*1000))">
+    Generate Number
+  </button>
+</body>
+</html>
