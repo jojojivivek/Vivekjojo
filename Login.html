@@ -4,34 +4,56 @@
   <title>Login Panel</title>
   <style>
     body {
-      background-color: #121212;
+      background-color: #0e0e0e;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
     }
-    input, button {
+
+    input {
       padding: 10px;
       margin: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1a73e8;
+      color: white;
       border: none;
       border-radius: 5px;
-    }
-    button {
-      background-color: #1e88e5;
-      color: white;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h2>Welcome to the Login Panel</h2>
-  <input type="text" id="username" placeholder="Enter your name"><br>
+
+  <input type="text" id="username" placeholder="Enter Username"><br>
+  <input type="password" id="password" placeholder="Enter Password"><br>
   <button onclick="login()">Login</button>
 
   <script>
     function login() {
-      // Redirect after clicking login
-      window.location.href = "https://sites.google.com/view/vivek-urstr/home"; // ← yaha final link aayegi
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const users = {
+        "Vivek09": "6954",
+        "Vivek08": "5348",
+        "Vivek07": "6437",
+        "Vivek01": "0888",
+        "Vivek05": "6439"
+      };
+
+      if (users[username] === password) {
+        // Correct login
+        window.location.href = "https://sites.google.com/view/urstrulyvivek/home?authuser=1";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
     }
   </script>
 </body>
