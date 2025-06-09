@@ -1,58 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Panel</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Panda Style</title>
   <style>
     body {
-      background-color: #0e0e0e;
+      margin: 0;
+      background: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       color: white;
-      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px #00ffcc;
       text-align: center;
-      padding-top: 100px;
+      width: 300px;
     }
-
+    .panda {
+      width: 120px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px #00ffc3);
+    }
     input {
+      background: transparent;
+      border: 2px solid #00ffc3;
       padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #1a73e8;
+      margin: 10px 0;
+      width: 90%;
       color: white;
+      border-radius: 10px;
+      outline: none;
+    }
+    button {
+      background: #00ffc3;
+      color: black;
+      font-weight: bold;
       border: none;
-      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0ff;
     }
   </style>
 </head>
 <body>
-  <h2>Welcome to the Login Panel</h2>
+  <div class="login-container">
+    <img src="https://i.ibb.co/TKR6gHh/neon-panda.gif" class="panda" alt="panda" />
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="error" style="color: red; margin-top: 10px;"></p>
+  </div>  <script>
+    const validUsers = {
+      "Vivek09": "6954",
+      "Vivek08": "5348",
+      "Vivek07": "6437",
+      "Vivek01": "0888",
+      "Vivek05": "6439"
+    };
 
-  <input type="text" id="username" placeholder="Enter Username"><br>
-  <input type="password" id="password" placeholder="Enter Password"><br>
-  <button onclick="login()">Login</button>
-
-  <script>
     function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      const users = {
-        "Vivek09": "6954",
-        "Vivek08": "5348",
-        "Vivek07": "6437",
-        "Vivek01": "0888",
-        "Vivek05": "6439"
-      };
-
-      if (users[username] === password) {
-        // Correct login
-        window.location.href = "https://sites.google.com/view/urstrulyvivek/home?authuser=1";
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      if (validUsers[u] === p) {
+        window.location.href = "https://sites.google.com/view/urstrulyvivek/home";
       } else {
-        alert("Invalid username or password. Please try again.");
+        document.getElementById('error').innerText = "Invalid username or password!";
       }
     }
   </script>
